@@ -62,6 +62,21 @@ Facility <- R6Class("Facility",
                         cat("Target Intensity (tCO2/tOutput):", self$Target_Intensity, "\n")
                         cat("MACC:\n")
                         print(self$MACC)
+                      },
+
+                      # Update method to change one or more attributes
+                      #' @description
+                      #' Update one or more attributes of the Facility object.
+                      #' @param params A list of attributes to update, where the names are the attribute names
+                      #'        and the values are the new values to assign to those attributes.
+                      update = function(params) {
+                        for (param in names(params)) {
+                          if (param %in% names(self)) {
+                            self[[param]] <- params[[param]]
+                          } else {
+                            warning(paste("Invalid parameter:", param))
+                          }
+                        }
                       }
                     )
 )
@@ -80,4 +95,8 @@ Facility <- R6Class("Facility",
 #'   Target_Intensity = 1.8,
 #'   MACC = macc_df
 #' )
+#' facility_1$print_details()
+#'
+#' # Updating the Target_Intensity and Size
+#' facility_1$update(list(Target_Intensity = 1.6, Size = 2.0))
 #' facility_1$print_details()

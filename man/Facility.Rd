@@ -37,6 +37,7 @@ A class to represent a facility with attributes like name, sector, location, and
 \itemize{
 \item \href{#method-Facility-new}{\code{Facility$new()}}
 \item \href{#method-Facility-print_details}{\code{Facility$print_details()}}
+\item \href{#method-Facility-update}{\code{Facility$update()}}
 \item \href{#method-Facility-clone}{\code{Facility$clone()}}
 }
 }
@@ -89,6 +90,24 @@ Print the details of the Facility object, including MACC data.
 \if{html}{\out{<div class="r">}}\preformatted{Facility$print_details()}\if{html}{\out{</div>}}
 }
 
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Facility-update"></a>}}
+\if{latex}{\out{\hypertarget{method-Facility-update}{}}}
+\subsection{Method \code{update()}}{
+Update one or more attributes of the Facility object.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Facility$update(params)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{params}}{A list of attributes to update, where the names are the attribute names
+and the values are the new values to assign to those attributes.}
+}
+\if{html}{\out{</div>}}
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Facility-clone"></a>}}
