@@ -1,12 +1,17 @@
 Package: CarbonPolicySim
-Title: What the Package Does (One Line, Title Case)
+Title: Carbon Market Simulation Using Agent-Based Models
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Ankit", "Sharma", email = "your.email@example.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Description: This package provides tools to simulate carbon markets using agent-based models. 
+    It includes classes and methods for facilities, marginal abatement cost curves (MACC), 
+    and other carbon market components.
+License: MIT
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
+Imports:
+    R6
+
+
