@@ -1,7 +1,6 @@
 # Load required library
 library(R6)
 
-# Define the Facility class
 #' Facility Class
 #'
 #' A class to represent a facility with attributes like name, sector, location, and MACC data.
@@ -14,6 +13,7 @@ library(R6)
 #' @field Baseline_CO2_Intensity A float representing baseline CO2 intensity (tCO2/tOutput).
 #' @field Target_Intensity A float representing target CO2 intensity (tCO2/tOutput).
 #' @field MACC A dataframe with two columns: CO2 price and Abatement Potential.
+#' @export
 Facility <- R6Class("Facility",
                     public = list(
                       # Attributes
