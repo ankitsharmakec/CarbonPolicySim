@@ -1,4 +1,4 @@
-#' Update Function
+#' updateAttributes Function
 #'
 #' A function to update the attributes of a given object.
 #'
@@ -21,29 +21,25 @@
 #' )
 #'
 #' # Update the facility's size and target CO2 intensity
-#' updated_facility <- update(facility, Size = 2.0, Target_Intensity = 1.5)
+#' updated_facility <- updateAttributes(facility, Size = 2.0, Target_Intensity = 1.5)
 #' @export
-update <- function(object, ...) {
+
+updateAttributes <- function(object, ...) {
   # Capture the arguments passed to the function
   new_values <- list(...)
 
   # Get the class of the object
   object_class <- class(object)
 
-  # Check if the object is of class "Facility"
-  if (object_class == "Facility") {
-    # Loop through each argument passed for updating
-    for (attr_name in names(new_values)) {
-      # Check if the attribute exists in the object
-      if (attr_name %in% slotNames(object)) {
-        # Update the attribute value
-        slot(object, attr_name) <- new_values[[attr_name]]
-      } else {
-        warning(paste("Attribute", attr_name, "does not exist in the object."))
-      }
+  # Loop through each argument passed for updating
+  for (attr_name in names(new_values)) {
+    # Check if the attribute exists in the object
+    if (attr_name %in% slotNames(object)) {
+      # Update the attribute value
+      slot(object, attr_name) <- new_values[[attr_name]]
+    } else {
+      warning(paste("Attribute", attr_name, "does not exist in the object."))
     }
-  } else {
-    stop("The provided object is not of class 'Facility'.")
   }
 
   return(object)
