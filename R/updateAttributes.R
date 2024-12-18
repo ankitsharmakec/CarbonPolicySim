@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #' updateAttributes Function
+=======
+#' Update Attributes Function
+>>>>>>> 26db62a573e999bcedfc8f37cfef991005fb8727
 #'
 #' A function to update the attributes of a given object.
 #'
@@ -23,14 +27,21 @@
 #' # Update the facility's size and target CO2 intensity
 #' updated_facility <- updateAttributes(facility, Size = 2.0, Target_Intensity = 1.5)
 #' @export
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26db62a573e999bcedfc8f37cfef991005fb8727
 updateAttributes <- function(object, ...) {
   # Capture the arguments passed to the function
   new_values <- list(...)
-
+  
   # Get the class of the object
   object_class <- class(object)
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 26db62a573e999bcedfc8f37cfef991005fb8727
   # Loop through each argument passed for updating
   for (attr_name in names(new_values)) {
     # Check if the attribute exists in the object
@@ -41,6 +52,6 @@ updateAttributes <- function(object, ...) {
       warning(paste("Attribute", attr_name, "does not exist in the object."))
     }
   }
-
+  
   return(object)
 }
