@@ -2,52 +2,9 @@
 % Please edit documentation in R/facility.R
 \name{Facility}
 \alias{Facility}
-\title{Facility Class}
-\description{
-Facility Class
-
-Facility Class
-}
-\details{
-A class to represent a facility with attributes like name, sector, location, and MACC data.
-}
-\section{Public fields}{
-\if{html}{\out{<div class="r6-fields">}}
-\describe{
-\item{\code{Name}}{A string representing the name of the facility.}
-
-\item{\code{Sector}}{A string representing the sector (e.g., Steel, Cement).}
-
-\item{\code{Location}}{A string representing the city where the facility is located.}
-
-\item{\code{Location_Lat_Long}}{A dataframe containing Latitude and Longitude of the location.}
-
-\item{\code{Size}}{A float representing the size of the facility.}
-
-\item{\code{Baseline_CO2_Intensity}}{A float representing baseline CO2 intensity (tCO2/tOutput).}
-
-\item{\code{Target_Intensity}}{A float representing target CO2 intensity (tCO2/tOutput).}
-
-\item{\code{MACC}}{A dataframe with two columns: CO2 price and Abatement Potential.}
-}
-\if{html}{\out{</div>}}
-}
-\section{Methods}{
-\subsection{Public methods}{
-\itemize{
-\item \href{#method-Facility-new}{\code{Facility$new()}}
-\item \href{#method-Facility-print_details}{\code{Facility$print_details()}}
-\item \href{#method-Facility-update}{\code{Facility$update()}}
-\item \href{#method-Facility-clone}{\code{Facility$clone()}}
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Facility-new"></a>}}
-\if{latex}{\out{\hypertarget{method-Facility-new}{}}}
-\subsection{Method \code{new()}}{
-Create a new Facility object.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Facility$new(
+\title{Facility Constructor}
+\usage{
+Facility(
   Name,
   Sector,
   Location,
@@ -56,74 +13,42 @@ Create a new Facility object.
   Baseline_CO2_Intensity,
   Target_Intensity,
   MACC
-)}\if{html}{\out{</div>}}
+)
 }
+\arguments{
+\item{Name}{A string representing the name of the facility.}
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{Name}}{A string representing the name of the facility.}
+\item{Sector}{A string representing the sector (e.g., Steel, Cement).}
 
-\item{\code{Sector}}{A string representing the sector (e.g., Steel, Cement).}
+\item{Location}{A string representing the city where the facility is located.}
 
-\item{\code{Location}}{A string representing the city where the facility is located.}
+\item{Location_Lat_Long}{A data frame containing Latitude and Longitude of the location.}
 
-\item{\code{Location_Lat_Long}}{A dataframe containing Latitude and Longitude of the location.}
+\item{Size}{A numeric value representing the size of the facility.}
 
-\item{\code{Size}}{A float representing the size of the facility.}
+\item{Baseline_CO2_Intensity}{A numeric value representing baseline CO2 intensity (tCO2/tOutput).}
 
-\item{\code{Baseline_CO2_Intensity}}{A float representing baseline CO2 intensity (tCO2/tOutput).}
+\item{Target_Intensity}{A numeric value representing target CO2 intensity (tCO2/tOutput).}
 
-\item{\code{Target_Intensity}}{A float representing target CO2 intensity (tCO2/tOutput).}
-
-\item{\code{MACC}}{A dataframe with two columns: CO2 price and Abatement Potential.}
+\item{MACC}{A data frame with two columns: CO2 price and Abatement Potential.}
 }
-\if{html}{\out{</div>}}
+\value{
+A Facility object.
 }
+\description{
+Create a new Facility object.
 }
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Facility-print_details"></a>}}
-\if{latex}{\out{\hypertarget{method-Facility-print_details}{}}}
-\subsection{Method \code{print_details()}}{
-Print the details of the Facility object, including MACC data.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Facility$print_details()}\if{html}{\out{</div>}}
-}
-
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Facility-update"></a>}}
-\if{latex}{\out{\hypertarget{method-Facility-update}{}}}
-\subsection{Method \code{update()}}{
-Update one or more attributes of the Facility object.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Facility$update(params)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{params}}{A list of attributes to update, where the names are the attribute names
-and the values are the new values to assign to those attributes.}
-}
-\if{html}{\out{</div>}}
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Facility-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-Facility-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Facility$clone(deep = FALSE)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
+\examples{
+location_df <- data.frame(Latitude = 29.9457, Longitude = 78.1642)
+macc_df <- data.frame(CO2_price = c(10, 20, 30, 40), Abatement_Potential = c(5, 10, 15, 20))
+facility <- Facility(
+  Name = "Steel Plant A",
+  Sector = "Steel",
+  Location = "Roorkee",
+  Location_Lat_Long = location_df,
+  Size = 1.5,
+  Baseline_CO2_Intensity = 2.5,
+  Target_Intensity = 1.8,
+  MACC = macc_df
+)
 }
