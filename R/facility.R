@@ -41,7 +41,7 @@ setClass(
 #' @return A Facility object.
 #' @examples
 #' location_df <- data.frame(Latitude = 29.9457, Longitude = 78.1642)
-#' macc_df <- data.frame(CO2_price = c(10, 20, 30, 40), Abatement_Potential = c(5, 10, 15, 20))
+#' macc_df <- data.frame(abatement_cost = c(10, 20, 30, 40), Abatement_Potential = c(5, 10, 15, 20))
 #' facility <- NewFacility(
 #'   Name = "Steel Plant A",
 #'   Sector = "Steel",
